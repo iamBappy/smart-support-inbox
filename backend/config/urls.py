@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path
+from django.urls import include, path
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -19,4 +20,10 @@ urlpatterns = [
         TokenRefreshView.as_view(),
         name="token_refresh",
     ),
+
+    path(
+        "api/",
+        include("inbox.urls"),
+    ),
 ]
+
