@@ -42,3 +42,7 @@ class ConversationDetailSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
         ]
+
+class ReplySerializer(serializers.Serializer):
+    message = serializers.CharField()
+

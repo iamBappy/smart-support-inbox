@@ -2,7 +2,8 @@ from django.urls import path
 
 from .views import (
     ConversationListView,
-    ConversationDetailView,
+    ConversationDetailView, 
+    ReplyView,
 )
 
 urlpatterns = [
@@ -16,5 +17,11 @@ urlpatterns = [
         "conversations/<int:pk>/",
         ConversationDetailView.as_view(),
         name="conversation-detail",
+    ),
+
+    path(
+    "conversations/<int:pk>/reply/",
+    ReplyView.as_view(),
+    name="conversation-reply",
     ),
 ]
