@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import LockButtons from "./LockButtons";
 import type {
   Conversation,
   ConversationDetailType,
@@ -45,6 +46,9 @@ export default function ConversationDetail({ conversation }: Props) {
   return (
     <div>
       <h2>{detail.customer_name}</h2>
+      <LockButtons
+          conversationId={conversation.id}
+      />
 
       <p>
         <strong>Status:</strong> {detail.status}
@@ -61,11 +65,7 @@ export default function ConversationDetail({ conversation }: Props) {
       {detail.messages.map((message) => (
         <div
           key={message.id}
-          style={{
-            border: "1px solid lightgray",
-            padding: "10px",
-            marginBottom: "10px",
-          }}
+          className="message"
         >
           <strong>{message.sender}</strong>
 

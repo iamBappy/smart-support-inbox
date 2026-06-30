@@ -39,12 +39,7 @@ export default function ConversationList({ onSelect }: Props) {
         <div
           key={conversation.id}
           onClick={() => onSelect(conversation)}
-          style={{
-            border: "1px solid gray",
-            marginBottom: "10px",
-            padding: "10px",
-            cursor: "pointer",
-          }}
+          className="card"
         >
           <h4>{conversation.customer_name}</h4>
 
