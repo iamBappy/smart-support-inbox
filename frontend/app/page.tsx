@@ -5,6 +5,7 @@ import { useState } from "react";
 import ConversationList from "../components/ConversationList";
 
 import { Conversation } from "../types/conversation";
+import ConversationDetail from "../components/ConversationDetail";
 
 export default function Home() {
 
@@ -37,7 +38,9 @@ export default function Home() {
         <h2>Conversation Details</h2>
 
         {selectedConversation ? (
-          <h3>{selectedConversation.customer_name}</h3>
+          <ConversationDetail
+             conversation={selectedConversation}
+          />
         ) : (
           <p>Select a conversation.</p>
         )}
